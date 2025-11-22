@@ -1,0 +1,889 @@
+:root {
+  --gx-bg: #050608;
+  --gx-bg-alt: #0a0c10;
+  --gx-card: #111318;
+  --gx-card-soft: #151821;
+  --gx-border: rgba(255, 255, 255, 0.08);
+  --gx-border-soft: rgba(255, 255, 255, 0.04);
+  --gx-text: #f9fafb;
+  --gx-sub: #9ca3af;
+  --gx-accent: #00d7a0;
+  --gx-accent-soft: rgba(0, 215, 160, 0.16);
+  --gx-danger: #f87171;
+  --gx-radius-lg: 18px;
+  --gx-radius-md: 12px;
+  --gx-shadow-card: 0 18px 55px rgba(0, 0, 0, 0.7);
+}
+
+/* base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--gx-bg);
+  color: var(--gx-text);
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.gx-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* header */
+
+.gx-header {
+  background: #050608;
+  border-bottom: 1px solid var(--gx-border-soft);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.gx-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.gx-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.gx-logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+}
+
+.gx-logo-x {
+  color: var(--gx-accent);
+}
+
+.gx-lang-btn {
+  background: #101218;
+  border-radius: 999px;
+  border: 1px solid var(--gx-border-soft);
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--gx-sub);
+  cursor: pointer;
+}
+
+.gx-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 14px;
+}
+
+.gx-nav a {
+  color: var(--gx-sub);
+}
+
+.gx-nav a:hover {
+  color: var(--gx-accent);
+}
+
+.gx-header-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* buttons */
+
+.gx-btn {
+  border-radius: var(--gx-radius-md);
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gx-btn-sm {
+  padding: 7px 14px;
+  font-size: 13px;
+}
+
+.gx-btn-primary {
+  background: var(--gx-accent);
+  color: #04110c;
+}
+
+.gx-btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.gx-btn-outline {
+  background: transparent;
+  color: var(--gx-accent);
+  border: 1px solid var(--gx-accent-soft);
+}
+
+.gx-btn-outline:hover {
+  background: rgba(0, 215, 160, 0.12);
+}
+
+/* main / hero */
+
+.gx-main {
+  padding-bottom: 60px;
+}
+
+.gx-hero {
+  padding: 40px 0 46px;
+}
+
+.gx-hero-title {
+  margin: 0 0 10px;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.gx-hero-subtitle {
+  margin: 0 0 26px;
+  font-size: 15px;
+  color: var(--gx-sub);
+  max-width: 780px;
+}
+
+/* exchange grid — 3 колонки, правая шире */
+
+.gx-exchange-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.7fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* exchange cards */
+
+.gx-ex-card {
+  background: var(--gx-card);
+  border-radius: var(--gx-radius-lg);
+  border: 1px solid var(--gx-border);
+  padding: 22px 22px 20px;
+  box-shadow: var(--gx-shadow-card);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gx-ex-card-side {
+  background: var(--gx-card) !important;
+  padding: 24px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gx-ex-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.gx-ex-card-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.gx-ex-card-sub {
+  font-size: 12px;
+  color: var(--gx-sub);
+}
+
+.gx-limit {
+  font-size: 12px;
+  color: var(--gx-sub);
+}
+
+/* amount block */
+
+.gx-amount-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.gx-amount-input {
+  flex: 1;
+  border-radius: var(--gx-radius-md);
+  border: 1px solid var(--gx-border);
+  background: #0d0f15;
+  color: var(--gx-text);
+  padding: 13px 14px;
+  font-size: 20px;
+  outline: none;
+}
+
+.gx-amount-input::placeholder {
+  color: #4b5563;
+}
+
+.gx-amount-input:focus {
+  border-color: var(--gx-accent);
+}
+
+.gx-currency-main {
+  min-width: 110px;
+  border-radius: var(--gx-radius-md);
+  border: 1px solid var(--gx-border);
+  background: #181b23;
+  color: var(--gx-text);
+  font-size: 14px;
+  padding: 10px 12px;
+  cursor: default;
+}
+
+.gx-currency-usdt {
+  color: var(--gx-accent);
+}
+
+/* info row */
+
+.gx-ex-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--gx-sub);
+  margin-top: auto;
+}
+
+.gx-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--gx-accent-soft);
+  color: var(--gx-accent);
+  font-size: 11px;
+}
+
+/* side card: switch + rate */
+
+.gx-ex-side-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+/* левый блок (две "таблетки" RUB / USDT в линию как на groshx) */
+
+.gx-side-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gx-side-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.gx-side-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0d1016;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-width: 150px;
+}
+
+.gx-side-item.gx-active {
+  background: #141820;
+  border-color: rgba(0, 215, 160, 0.4);
+}
+
+.gx-side-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.gx-side-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.gx-side-sub {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: -2px;
+}
+
+.gx-side-arrow {
+  margin-left: auto;
+  font-size: 16px;
+  color: #9ca3af;
+}
+
+/* блок с курсом справа */
+
+.gx-side-rate {
+  padding: 10px 14px;
+  background: rgba(0, 215, 160, 0.08);
+  border: 1px solid rgba(0, 215, 160, 0.35);
+  border-radius: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.gx-side-rate-title {
+  font-size: 12px;
+  color: var(--gx-sub);
+  margin-bottom: 4px;
+}
+
+.gx-side-rate-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* старые direction-pill — оставляю, если захочешь включить */
+
+.gx-direction-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: #11141c;
+  border: 1px solid var(--gx-border-soft);
+  overflow: hidden;
+}
+
+.gx-dir-item {
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--gx-sub);
+}
+
+.gx-dir-item-active {
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--gx-text);
+}
+
+.gx-dir-arrow {
+  padding: 0 6px;
+  font-size: 12px;
+  color: var(--gx-sub);
+}
+
+/* form */
+
+.gx-form {
+  margin-top: 4px;
+}
+
+.gx-field {
+  margin-bottom: 14px;
+}
+
+.gx-field-half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gx-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.gx-field input {
+  width: 100%;
+  border-radius: var(--gx-radius-md);
+  border: 1px solid var(--gx-border);
+  background: #0d0f15;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--gx-text);
+  outline: none;
+}
+
+.gx-field input::placeholder {
+  color: #4b5563;
+}
+
+.gx-field input:focus {
+  border-color: var(--gx-accent);
+}
+
+/* summary */
+
+.gx-summary {
+  border-radius: var(--gx-radius-md);
+  border: 1px solid var(--gx-border);
+  background: #0d0f15;
+  padding: 10px 12px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.gx-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.gx-row:last-child {
+  margin-bottom: 0;
+}
+
+.gx-row span:last-child {
+  color: var(--gx-sub);
+}
+
+.gx-row-accent span:last-child {
+  color: var(--gx-accent);
+}
+
+/* actions + status */
+
+.gx-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.gx-status {
+  min-height: 18px;
+  font-size: 12px;
+  color: var(--gx-sub);
+}
+
+.gx-status.gx-success {
+  color: var(--gx-accent);
+}
+
+.gx-status.gx-error {
+  color: var(--gx-danger);
+}
+
+.gx-small-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--gx-sub);
+}
+
+/* sections / holders — нижние блоки как отдельные карточки */
+
+.gx-section,
+.gx-section-alt {
+  background: var(--gx-bg);
+  padding: 60px 0;
+  border: none;
+}
+
+/* фон полосками больше не используется — только холдеры */
+
+.gx-section-alt {
+  background: var(--gx-bg);
+}
+
+/* каждый внутренний блок — ровный холдер */
+
+.gx-section > .gx-container,
+.gx-section-alt > .gx-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.gx-section > .gx-container > *,
+.gx-section-alt > .gx-container > * {
+  background: var(--gx-card);
+  border: 1px solid var(--gx-border);
+  border-radius: var(--gx-radius-lg);
+  box-shadow: var(--gx-shadow-card);
+  padding: 26px 28px;
+}
+
+/* заголовки секций */
+
+.gx-section-title {
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+.gx-section-text {
+  font-size: 14px;
+  color: var(--gx-sub);
+}
+
+/* steps */
+
+.gx-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.gx-step {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.gx-step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--gx-accent-soft);
+  color: var(--gx-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.gx-step-text {
+  font-size: 13px;
+  color: var(--gx-sub);
+}
+
+/* advantages */
+
+.gx-advantages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.gx-adv-item {
+  background: var(--gx-card);
+  border-radius: var(--gx-radius-md);
+  border: 1px solid var(--gx-border-soft);
+  padding: 12px 14px;
+  font-size: 13px;
+}
+
+.gx-adv-item h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+/* faq */
+
+.gx-faq details {
+  background: #0f1116;
+  border-radius: var(--gx-radius-md);
+  border: 1px solid var(--gx-border-soft);
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+}
+
+.gx-faq summary {
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--gx-text);
+}
+
+/* optional holder class, если будешь использовать */
+
+.gx-holder {
+  background: var(--gx-card);
+  border-radius: var(--gx-radius-lg);
+  border: 1px solid var(--gx-border);
+  box-shadow: var(--gx-shadow-card);
+  padding: 26px 28px;
+}
+
+/* responsive */
+
+@media (max-width: 1024px) {
+  .gx-exchange-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gx-ex-card-side {
+    grid-column: 1 / -1;
+  }
+
+  .gx-header-inner {
+    gap: 14px;
+  }
+
+  .gx-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .gx-hero-title {
+    font-size: 26px;
+  }
+
+  .gx-exchange-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gx-field-half {
+    grid-template-columns: 1fr;
+  }
+
+  .gx-actions {
+    flex-direction: column;
+  }
+
+  .gx-header-inner {
+    justify-content: space-between;
+  }
+
+  .gx-ex-side-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gx-side-left {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gx-side-rate {
+    width: 100%;
+  }
+}
+
+.gx-exchange-grid {
+  transform: translateX(-95px);
+}
+
+.gx-hero-title,
+.gx-hero-subtitle {
+    text-align: center;
+}
+
+.gx-hero-subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gx-ex-side-header {
+    display: flex;
+    align-items: center;
+}
+
+.gx-side-left {
+    display: flex;
+    align-items: center;
+}
+
+.gx-side-item,
+.gx-side-rate {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.gx-side-item {
+    padding: 0 14px;
+}
+
+.gx-side-rate {
+    padding: 0 18px;
+}
+
+.gx-side-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.gx-side-title {
+    line-height: 1;
+}
+
+.gx-side-sub {
+    line-height: 1;
+    margin-top: -2px;
+}
+
+.gx-side-item,
+.gx-side-rate {
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- ВЫРАВНИВАЕМ ТРИ ПЛАШКИ СВЕРХУ --- */
+
+.gx-ex-side-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.gx-side-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* одинаковая высота + одинаковая внутренняя геометрия */
+.gx-side-item,
+.gx-side-rate {
+    height: 48px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 12px;
+}
+
+/* выравниваем иконку строго по центру */
+.gx-side-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+/* текстовые блоки ровняем по вертикали */
+.gx-side-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.gx-side-sub {
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+/* стрелки ровняем по высоте */
+.gx-side-arrow {
+    font-size: 14px;
+    line-height: 1;
+    margin-left: auto;
+    color: #9ca3af;
+}
+
+/* внутренний стакан курсового блока */
+.gx-side-rate-title {
+    font-size: 11px;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.gx-side-rate-value {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.gx-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* === РОВНЫЕ 3 ПЛАШКИ — GROSHX STYLE === */
+
+.gx-side-item,
+.gx-side-rate {
+    height: 48px !important;
+    padding: 0 18px !important;
+    background: #0d1016 !important;
+    border: 1px solid rgba(0, 215, 160, 0.20) !important;
+    border-radius: 12px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* Активная — зелёная */
+.gx-side-item.gx-active {
+    background: rgba(0, 215, 160, 0.12) !important;
+    border-color: rgba(0, 215, 160, 0.45) !important;
+}
+
+/* Иконка ровно по центру */
+.gx-side-icon {
+    width: 22px !important;
+    height: 22px !important;
+    display: block !important;
+}
+
+/* Текст выравниваем */
+.gx-side-title {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+}
+
+.gx-side-sub {
+    font-size: 11px !important;
+    color: #9ca3af !important;
+    line-height: 1 !important;
+    margin-top: 2px !important;
+}
+
+/* Стрелка */
+.gx-side-arrow {
+    font-size: 15px !important;
+    line-height: 1 !important;
+    margin-left: auto !important;
+    color: #9ca3af !important;
+}
+
+/* Курс обмена — точно в той же сетке */
+.gx-side-rate-title,
+.gx-side-rate-value {
+    line-height: 1 !important;
+}
+
+.gx-side-rate-title,
+.gx-side-rate-value {
+    font-weight: 600 !important;
+}
+
+/* --- одинаковая ширина нижних кнопок --- */
+.gx-actions .gx-btn {
+    min-width: 200px !important;
+    text-align: center !important;
+}
+
+/* немного увеличим вертикальный ритм, чтобы смотрелось ровнее */
+.gx-actions {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    margin-top: 10px !important;
+}
+
+

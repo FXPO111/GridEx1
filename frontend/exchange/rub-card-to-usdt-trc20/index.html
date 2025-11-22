@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>GridEx — Обмен RUB карты на USDT TRC20 онлайн</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="gx-header">
+  <div class="gx-container gx-header-inner">
+
+    <div class="gx-header-left">
+      <div class="gx-logo">grid<span class="gx-logo-x">ex</span></div>
+      <button class="gx-lang-btn">RUS ▾</button>
+    </div>
+
+    <nav class="gx-nav">
+      <a href="#rules">Правила обмена</a>
+      <a href="#how">Как это работает</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="gx-header-auth">
+      <button class="gx-btn gx-btn-outline gx-btn-sm">Вход</button>
+      <button class="gx-btn gx-btn-primary gx-btn-sm">Регистрация</button>
+    </div>
+
+  </div>
+</header>
+
+<main class="gx-main">
+
+  <!-- HERO -->
+  <section class="gx-hero">
+    <div class="gx-container">
+      <h1 class="gx-hero-title">Обмен RUB с карты на USDT TRC20 в GridEx</h1>
+      <p class="gx-hero-subtitle">
+        Вы переводите RUB с карты российского банка — мы отправляем USDT TRC20 на ваш кошелёк.
+      </p>
+
+      <!-- 3 КОЛОНКИ -->
+      <div class="gx-exchange-grid">
+
+        <!-- КОЛОНКА 1 -->
+        <div class="gx-ex-card">
+          <div class="gx-ex-card-header">
+            <div>
+              <div class="gx-ex-card-title">Отдаёшь</div>
+              <div class="gx-ex-card-sub">Мин: 10000 RUB</div>
+            </div>
+            <div class="gx-limit">Макс: 7000000 RUB</div>
+          </div>
+
+          <div class="gx-amount-block">
+            <input type="number" placeholder="0.00" class="gx-amount-input">
+            <button type="button" class="gx-currency-main">RUB</button>
+          </div>
+
+          <div class="gx-ex-info-row">
+            <span>Способ оплаты</span>
+            <span class="gx-badge">Перевод на карту РФ</span>
+          </div>
+        </div>
+
+        <!-- КОЛОНКА 2 -->
+        <div class="gx-ex-card">
+          <div class="gx-ex-card-header">
+            <div>
+              <div class="gx-ex-card-title">Получаешь</div>
+              <div class="gx-ex-card-sub">Резерв: 2305179.03 USDT</div>
+            </div>
+          </div>
+
+          <div class="gx-amount-block">
+            <input type="text" placeholder="0.00" class="gx-amount-input" readonly>
+            <button type="button" class="gx-currency-main gx-currency-usdt">USDT TRC20</button>
+          </div>
+
+          <div class="gx-ex-info-row">
+            <span>Сеть вывода</span>
+            <span class="gx-badge">TRC20</span>
+          </div>
+        </div>
+
+        <!-- КОЛОНКА 3 -->
+        <div class="gx-ex-card gx-ex-card-side">
+
+          <div class="gx-ex-side-header gx-side-flex">
+
+            <div class="gx-side-left">
+              <div class="gx-side-item gx-active">
+                  <img src="https://cryptologos.cc/logos/tether-usdt-logo.svg" class="gx-side-icon">
+                  <div>
+                      <div class="gx-side-title">RUB карта</div>
+                      <div class="gx-side-sub">RUB</div>
+                  </div>
+                  <div class="gx-side-arrow">↑</div>
+              </div>
+
+              <div class="gx-side-item">
+                  <img src="https://cryptologos.cc/logos/tether-usdt-logo.svg" class="gx-side-icon">
+                  <div>
+                      <div class="gx-side-title">USDT TRC20</div>
+                      <div class="gx-side-sub">USDT</div>
+                  </div>
+                  <div class="gx-side-arrow">↓</div>
+              </div>
+            </div>
+
+            <div class="gx-side-rate">
+                <div class="gx-side-rate-title">Курс обмена</div>
+                <div class="gx-side-rate-value" id="rate-label">—</div>
+            </div>
+
+          </div>
+
+          <form class="gx-form">
+            <div class="gx-field">
+              <label>Ваш USDT TRC20 кошелёк</label>
+              <input id="wallet-input" type="text" placeholder="TXXXXXXXXXXXXXXXXXXXXXXXX" required>
+            </div>
+
+            <div class="gx-field gx-field-half">
+              <div>
+                <label>E-mail (опционально)</label>
+                <input type="email" placeholder="example@mail.com">
+              </div>
+              <div>
+                <label>Telegram (опционально)</label>
+                <input type="text" placeholder="@username">
+              </div>
+            </div>
+
+            <div class="gx-summary">
+              <div class="gx-row">
+                <span>Комиссия сервиса</span>
+                <span id="fee-label">—</span>
+              </div>
+              <div class="gx-row gx-row-accent">
+                <span>Курс действует ещё</span>
+                <span id="lock-timer">Не зафиксирован</span>
+              </div>
+            </div>
+
+            <div class="gx-actions">
+              <button type="button" class="gx-btn gx-btn-outline">Зафиксировать курс</button>
+              <button type="submit" class="gx-btn gx-btn-primary">Создать заявку</button>
+            </div>
+
+            <div id="form-status" class="gx-status"></div>
+          </form>
+
+          <p class="gx-small-note">
+            После создания заявки вы получите реквизиты карты для перевода RUB.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ПРАВИЛА -->
+  <section id="rules" class="gx-section gx-section-alt">
+    <div class="gx-container">
+      <div class="gx-holder">
+        <h2 class="gx-section-title">Правила обмена</h2>
+        <p class="gx-section-text">
+          Здесь будут реальные правила обмена, лимиты, KYC/AML.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАК ЭТО РАБОТАЕТ -->
+  <section id="how" class="gx-section">
+    <div class="gx-container">
+      <div class="gx-holder">
+        <h2 class="gx-section-title">Как это работает</h2>
+        <div class="gx-steps">
+          <div class="gx-step"><div class="gx-step-num">1</div><div class="gx-step-text">Вводишь сумму и адрес.</div></div>
+          <div class="gx-step"><div class="gx-step-num">2</div><div class="gx-step-text">Фиксируешь курс.</div></div>
+          <div class="gx-step"><div class="gx-step-num">3</div><div class="gx-step-text">Переводишь RUB.</div></div>
+          <div class="gx-step"><div class="gx-step-num">4</div><div class="gx-step-text">Получаешь USDT.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРЕИМУЩЕСТВА -->
+  <section id="advantages" class="gx-section gx-section-alt">
+    <div class="gx-container">
+      <div class="gx-holder">
+        <h2 class="gx-section-title">Преимущества GridEx</h2>
+        <div class="gx-advantages">
+          <div class="gx-adv-item"><h3>Онлайн-формат</h3><p>Без офисов. Только карта RUB и крипта.</p></div>
+          <div class="gx-adv-item"><h3>Фиксация курса</h3><p>Без скрытых комиссий.</p></div>
+          <div class="gx-adv-item"><h3>Ручная проверка</h3><p>Оператор проверяет оплату.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="gx-section">
+    <div class="gx-container">
+      <div class="gx-holder">
+        <h2 class="gx-section-title">FAQ</h2>
+        <div class="gx-faq">
+          <details><summary>Сколько времени?</summary><p>10–20 минут.</p></details>
+          <details><summary>Минимальная сумма?</summary><p>10000 RUB.</p></details>
+          <details><summary>Какие банки?</summary><p>Любой банк РФ.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section id="contacts" class="gx-section gx-section-alt">
+    <div class="gx-container">
+      <div class="gx-holder">
+        <h2 class="gx-section-title">Контакты</h2>
+        <p class="gx-section-text">
+          Telegram, почта, поддержка — позже добавишь реальные данные.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
